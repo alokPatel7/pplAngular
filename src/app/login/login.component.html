@@ -1,0 +1,54 @@
+<div class="content_rgt">
+  <div class="login_sec">
+    <h1>Log In</h1>
+    <ul>
+      <li
+        style="
+          background-color: red;
+          padding: 5px;
+          color: #fff;
+          font-size: 17px;
+          text-align: center;
+          border-radius: 5px;
+        "
+        *ngIf="invaliUserMessage"
+      >
+        Invalid UserId or Password
+      </li>
+      <form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
+        <li>
+          <span>Email-ID</span
+          ><input
+            type="text"
+            name="email"
+            [(ngModel)]="model.email"
+            #email="ngModel"
+            placeholder="Enter your email"
+            required
+          />
+        </li>
+        <li>
+          <span>Password</span
+          ><input
+            type="text"
+            name="password"
+            [(ngModel)]="model.password"
+            placeholder="Enter your password"
+            required
+          />
+        </li>
+        <li><input type="checkbox" />Remember Me</li>
+        <li>
+          <input type="submit" value="Log In" /><a href="#">Forgot Password</a>
+        </li>
+      </form>
+    </ul>
+    <div class="addtnal_acnt">
+      I do not have any account yet.<a routerLink="/signup"
+        >Create My Account Now !</a
+      >
+    </div>
+  </div>
+</div>
+
+<app-welcome-msg></app-welcome-msg>
