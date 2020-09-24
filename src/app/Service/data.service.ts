@@ -8,8 +8,6 @@ import { from } from 'rxjs';
 export class DataService {
   basicUrl = `http://localhost:2000`;
 
-  formData;
-
   constructor(private http: HttpClient) {}
 
   handleRegistration(formData) {
@@ -21,5 +19,10 @@ export class DataService {
     console.log('returenData', returnData);
 
     return returnData;
+  }
+
+  postImage(formData) {
+    console.log('service file', formData);
+    return this.http.post(`${this.basicUrl}/postUpload`, formData);
   }
 }

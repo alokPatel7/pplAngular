@@ -1,9 +1,33 @@
-<div class="rght_btn">
+<div *ngIf="!popupboxStatus" class="popup_sec" id="pop_forgt">
+  <div class="clos_btn">
+    <img
+      src="./assets/images/clos.png"
+      alt=""
+      id="clos_pop"
+      (click)="handlePopupBox()"
+    />
+  </div>
+  <form #uploadForm="ngForm" (ngSubmit)="handlePostUpload()">
+    <div class="pop_hdr"><span>Please Check Your Mail Box!</span></div>
+    <div class="man_contnt">
+      <!-- <input type="file" name="myFile" /> -->
+      <input
+        (change)="changeFile($event)"
+        type="file"
+        name="myFile"
+        id="inputGroupFile01"
+      />
+      <input type="submit" value="Upload Post" />
+    </div>
+  </form>
+</div>
+
+<div class="rght_btn" style="cursor: pointer" (click)="handlePopupBox()">
   <span class="rght_btn_icon"
     ><img src="./assets/images/btn_iconb.png" alt="up"
   /></span>
   <span class="btn_sep"
     ><img src="./assets/images/btn_sep.png" alt="sep"
   /></span>
-  <a href="#">Upload Post</a>
+  <a>Upload Post</a>
 </div>
