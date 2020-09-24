@@ -12,6 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { TimelineComponent } from './timeline/timeline.component';
+import { UploadPostComponent } from './upload-post/upload-post.component';
+import { CategoryComponent } from './category/category.component';
+import { InviteFriendsComponent } from './invite-friends/invite-friends.component';
+import { FeaturedComponent } from './featured/featured.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { TimelineComponent } from './timeline/timeline.component';
     WelcomeMsgComponent,
     LoginComponent,
     TimelineComponent,
+    UploadPostComponent,
+    CategoryComponent,
+    InviteFriendsComponent,
+    FeaturedComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

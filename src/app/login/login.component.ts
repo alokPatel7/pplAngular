@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
           } else {
             this.invaliUserMessage = true;
           }
-          console.log('return from server data ', loginData);
+          // console.log('return from server data ', loginData);
         });
     } else {
       // console.log('InValid form client side msg');

@@ -17,6 +17,9 @@ export class DataService {
   }
 
   handleLoginRequest(formData) {
-    return this.http.post(`${this.basicUrl}/login`, { formData });
+    const returnData = this.http.post(`${this.basicUrl}/login`, { formData });
+    console.log('returenData', returnData);
+
+    return returnData;
   }
 }
