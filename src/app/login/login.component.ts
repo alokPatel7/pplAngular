@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DataService } from '../Service/data.service';
 import { formatDate } from '@angular/common';
+import { strict } from 'assert';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,11 @@ export class LoginComponent implements OnInit {
 
   invaliUserMessage: boolean = false;
 
-  constructor(private titleService: Title, private dataServices: DataService) {
+  constructor(
+    private titleService: Title,
+    private dataServices: DataService,
+    private router: Router
+  ) {
     titleService.setTitle('Welcome to PPL');
   }
 
@@ -27,11 +33,11 @@ export class LoginComponent implements OnInit {
       this.dataServices
         .handleLoginRequest(this.model)
         .subscribe((loginData: string) => {
-          if (!loginData) {
-            this.invaliUserMessage = true;
-          } else {
+          if (loginData) {
             localStorage.setItem('currentUserId', loginData);
-            this.model = { email: '', password: '' };
+            this.router.navigate(['/timeline']);
+          } else {
+            this.invaliUserMessage = true;
           }
           console.log('return from server data ', loginData);
         });
