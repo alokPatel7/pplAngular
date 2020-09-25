@@ -16,6 +16,7 @@ import { UploadPostComponent } from './upload-post/upload-post.component';
 import { CategoryComponent } from './category/category.component';
 import { InviteFriendsComponent } from './invite-friends/invite-friends.component';
 import { FeaturedComponent } from './featured/featured.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { FeaturedComponent } from './featured/featured.component';
     FeaturedComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
