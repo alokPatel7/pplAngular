@@ -26,7 +26,11 @@ export class LoginComponent implements OnInit {
     titleService.setTitle('Welcome to PPL');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (localStorage.getItem('currentUserId')) {
+      this.router.navigate(['/timeline']);
+    }
+  }
 
   handleLogin(formData) {
     if (formData.valid) {

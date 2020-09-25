@@ -21,8 +21,16 @@ export class DataService {
     return returnData;
   }
 
+  curentUserdata(userId) {
+    return this.http.post(`${this.basicUrl}/curentUserdata  `, { userId });
+  }
+
   postImage(formData) {
-    console.log('service file', formData);
     return this.http.post(`${this.basicUrl}/postUpload`, formData);
+  }
+
+  // PAI for retrive all post
+  allPost(id) {
+    return this.http.post(`${this.basicUrl}/timelinepost`, { id });
   }
 }

@@ -1,4 +1,9 @@
-<div *ngIf="!popupboxStatus" class="popup_sec" id="pop_forgt">
+<div
+  *ngIf="popupboxStatus"
+  class="popup_sec"
+  id="pop_forgt"
+  style="width: 700px; height: 400px"
+>
   <div class="clos_btn">
     <img
       src="./assets/images/clos.png"
@@ -7,8 +12,8 @@
       (click)="handlePopupBox()"
     />
   </div>
-  <form #uploadForm="ngForm" (ngSubmit)="handlePostUpload()">
-    <div class="pop_hdr"><span>Please Check Your Mail Box!</span></div>
+  <form #uploadForm="ngForm" (ngSubmit)="handlePostUpload(uploadForm)">
+    <div class="pop_hdr"><span>Upload Post</span></div>
     <div class="man_contnt">
       <!-- <input type="file" name="myFile" /> -->
       <input
@@ -17,7 +22,24 @@
         name="myFile"
         id="inputGroupFile01"
       />
-      <input type="submit" value="Upload Post" />
+
+      <select name="category" id="category " (change)="handleCategory($event)">
+        <!-- <option value="">Select category</option> -->
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="bird">Birds</option>
+        <option value="rabbit">Rabbit</option>
+        <option value="others">Others</option></select
+      ><br /><br /><br />
+      <textarea
+        name="description"
+        id="description"
+        cols="30"
+        rows="2"
+        (keyup)="handleDescription($event)"
+      ></textarea>
+      <br /><br /><br />
+      <input  type="submit" value="Upload Post" />
     </div>
   </form>
 </div>
