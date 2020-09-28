@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { SinglepostComponent } from './singlepost/singlepost.component';
+import { MyPostComponent } from './my-post/my-post.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'timeline', component: TimelineComponent },
-
+  { path: 'singlepost/:postid', component: SinglepostComponent },
+  { path: 'mypost', component: MyPostComponent },
   { path: '**', component: NotFoundPageComponent },
 ];
 

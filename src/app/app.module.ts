@@ -18,6 +18,8 @@ import { InviteFriendsComponent } from './invite-friends/invite-friends.componen
 import { FeaturedComponent } from './featured/featured.component';
 import { DatePipe } from '@angular/common';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { SinglepostComponent } from './singlepost/singlepost.component';
+import { MyPostComponent } from './my-post/my-post.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     InviteFriendsComponent,
     FeaturedComponent,
     NotFoundPageComponent,
+    SinglepostComponent,
+    MyPostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [DatePipe],
