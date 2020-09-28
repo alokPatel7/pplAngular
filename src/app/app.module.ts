@@ -17,6 +17,7 @@ import { CategoryComponent } from './category/category.component';
 import { InviteFriendsComponent } from './invite-friends/invite-friends.component';
 import { FeaturedComponent } from './featured/featured.component';
 import { DatePipe } from '@angular/common';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DatePipe } from '@angular/common';
     CategoryComponent,
     InviteFriendsComponent,
     FeaturedComponent,
+    NotFoundPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [DatePipe],

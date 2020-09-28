@@ -7,6 +7,7 @@ import { from } from 'rxjs';
 })
 export class DataService {
   basicUrl = `http://localhost:2000`;
+  singlePostId;
 
   constructor(private http: HttpClient) {}
 
@@ -29,8 +30,32 @@ export class DataService {
     return this.http.post(`${this.basicUrl}/postUpload`, formData);
   }
 
-  // PAI for retrive all post
-  allPost(id) {
-    return this.http.post(`${this.basicUrl}/timelinepost`, { id });
+  // API for retrive all post
+  allPost() {
+    return this.http.get(`${this.basicUrl}/timelinepost`);
+  }
+
+  //  API for current user post
+  currentUserPost(userId) {
+    return this.http.get(`${this.basicUrl}/currenUsrePost`, {
+      params: { userId },
+    });
+  }
+
+  // single post
+  singlePost(postId) {
+    return this.http.get(`${this.basicUrl}/singlepost`, { params: { postId } });
+  }
+
+  likePost(postid, userid) {
+    return this.http.get(`${this.basicUrl}/likepost`, {
+      params: { postid, userid },
+    });
+  }
+
+  comment(postid, userName, comment) {
+    return this.http.post(`${this.basicUrl}/submitcomment`, {
+      params: { postid, userName, comment },
+    });
   }
 }

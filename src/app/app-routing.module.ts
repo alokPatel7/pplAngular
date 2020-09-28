@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,6 +27,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'timeline', component: TimelineComponent },
+
+  { path: '**', component: NotFoundPageComponent },
 ];
 
 @NgModule({
